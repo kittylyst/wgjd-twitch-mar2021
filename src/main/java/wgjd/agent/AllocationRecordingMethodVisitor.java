@@ -7,7 +7,7 @@ import org.objectweb.asm.commons.GeneratorAdapter;
 /** @author kittylyst */
 // tag::ALLOC_RECORDER[]
 public final class AllocationRecordingMethodVisitor extends GeneratorAdapter {
-  private final String runtimeAccounterTypeName = "optjava/agent/RuntimeCostAccounter";
+  private final String runtimeAccounterTypeName = "wgjd/agent/RuntimeCostAccounter";
 
   public AllocationRecordingMethodVisitor(
       MethodVisitor methodVisitor, int access, String name, String desc) {

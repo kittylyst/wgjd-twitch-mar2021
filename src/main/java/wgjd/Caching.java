@@ -11,7 +11,7 @@ public class Caching {
       touchEveryItem();
     }
     System.out.println("Line     Item");
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 100; i = i + 1) {
       long t0 = System.nanoTime();
       touchEveryLine();
       long t1 = System.nanoTime();
@@ -24,11 +24,13 @@ public class Caching {
   }
 
   private void touchEveryItem() {
-    for (int i = 0; i < testData.length; i++) testData[i]++;
+    for (int i = 0; i < testData.length; i = i + 1)
+      testData[i] = testData[i] + 1;
   }
 
   private void touchEveryLine() {
-    for (int i = 0; i < testData.length; i += 64) testData[i]++;
+    for (int i = 0; i < testData.length; i = i + 64)
+      testData[i] = testData[i] + 1;
   }
 
   public static void main(String[] args) {

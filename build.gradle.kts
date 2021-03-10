@@ -21,7 +21,7 @@ java {
 dependencies {
     implementation("org.slf4j:slf4j-api:${slf4jVersion}");
     implementation("org.slf4j:slf4j-simple:${slf4jVersion}")
-    implementation("com.google.code.gson:gson:${gsonVersion}")
+//    implementation("com.google.code.gson:gson:${gsonVersion}")
 
     implementation("org.ow2.asm:asm-commons:8.0.1")
     implementation("org.ow2.asm:asm-util:8.0.1")
@@ -32,7 +32,8 @@ tasks.shadowJar {
     archiveClassifier.set("")
     manifest {
         attributes(
-                "Premain-Class" to "com.newrelic.otlp.Agent",
+                "Premain-Class" to "wgjd.agent.AllocAgent",
+                "Boot-Class-Path" to "wgjd-twitch-mar2021-0.0.1.jar",
                 "Implementation-Version" to project.version,
                 "Implementation-Vendor" to "New Relic, Inc."
         )
